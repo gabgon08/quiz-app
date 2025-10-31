@@ -29,8 +29,6 @@ export default function Home() {
               <Button
                 className={styles.initButton}
                 type="default"
-                ghost
-                shape=""
                 href="/quiz"
               >Iniciar
               </Button>

@@ -13,7 +13,14 @@ export default function ThemeProvider({ children }) {
                     colorText: '#fddafd',
                 },
                 components: {
-                    Button: {},
+                    Button: {
+                        defaultBg: 'transparent',
+                        defaultBorderColor: '#fddafd',
+
+                        defaultHoverBorderColor: 'transparent',
+                        defaultHoverBg: '#fddafd',
+                        defaultHoverColor: '#000000dd',
+                    },
                 }
             }}>
 
