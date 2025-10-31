@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import { Radio, Button, Card, Progress, message, Typography, Space, Layout } from "antd";
+import { Button, Card, Progress, message, Typography, Space, Layout } from "antd";
 import styles from './quiz.module.css'
 
 const perguntas = [

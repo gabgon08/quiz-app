@@ -1,18 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from 'next/font/google'
 import "./globals.css";
 import { ConfigProvider } from "antd";
 import ThemeProvider from "../theme/index.jsx";
 import '@ant-design/v5-patch-for-react-19';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const mainFont = Roboto({
+  subsets: ['latin'],
+  weight: '400'
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -22,8 +17,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ConfigProvider>
-      <html lang="pt-BR">
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <html lang="pt-BR" className={mainFont.className}>
+        <body>
           <ThemeProvider>
             {children}
           </ThemeProvider>

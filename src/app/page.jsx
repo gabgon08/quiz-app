@@ -6,7 +6,7 @@ import { Layout, Typography, Space, Button } from 'antd'
 import ThemeProvider from "../theme";
 import Link from "next/link";
 
-const { Header, Content } = Layout
+const { Content } = Layout
 const { Title, Text } = Typography
 
 export default function Home() {
