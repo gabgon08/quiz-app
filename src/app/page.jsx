@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./page.module.css";
-import { Layout, Flex, Typography, Space } from 'antd'
+import { Layout, Typography, Space } from 'antd'
 import ThemeProvider from "../theme";
 
 const { Header, Content } = Layout
