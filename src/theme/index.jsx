@@ -9,11 +9,15 @@ export default function ThemeProvider({ children }) {
         <ConfigProvider locale={ptBR}
             theme={{
                 token: {
-                    fontFamily: 'var(--font-principal)'
+                    fontFamily: 'var(--font-principal)',
+                    colorText: '#fddafd',
+                },
+                components: {
+                    Button: {},
                 }
             }}>
 
             {children}
-        </ConfigProvider>
+        </ConfigProvider >
     )
 }

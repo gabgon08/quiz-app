@@ -2,9 +2,8 @@
 
 import React from "react";
 import styles from "./page.module.css";
-import { Layout, Typography, Space, Button } from 'antd'
+import { Layout, Typography, Space, Button, Card } from 'antd'
 import ThemeProvider from "../theme";
-import Link from "next/link";
 
 const { Content } = Layout
 const { Title, Text } = Typography
@@ -13,21 +12,31 @@ export default function Home() {
 
   return (
     <ThemeProvider>
-      <Layout className={styles.layout}>
+      <Layout className={styles.homeLayout}>
 
-        <Content className={styles.content}>
-          <Space direction="vertical" align="center" className={styles.space}>
-            <Title level={1}>QUIZ REFLEXIVO</Title>
-            <Title level={1}>COMO ESTÁ MEU TEMPO DE TELA?</Title>
-            <Title level={2}>INSTRUÇÕES</Title>
-            <Text strong>‼️Responda com sinceridade‼️</Text>
-            <Text>Este quiz não tem certo ou errado, são 10 perguntas que servem para pensar sobre seus próprios hábitos com o celular, computador, TV ou outros aparelhos</Text>
-            <Text>No final, descubra o que suas respostas dizem sobre o seu uso das telas
-            </Text>
-            <Button>
-              <Link href='/quiz'>Iniciar</Link>
-            </Button>
-          </Space>
+        <Content className={styles.homeContent}>
+          <Card className={styles.homeCard}>
+            <Space
+              className={styles.homeSpace}
+              direction="vertical"
+              align="center"
+              size='large'
+            >
+              <Title level={1}>COMO ESTÁ MEU TEMPO DE TELA?</Title>
+              <Title level={3}>‼️Responda com sinceridade‼️</Title>
+              <Text className={styles.homeText}>Este quiz não tem certo ou errado, são 10 perguntas que servem para pensar sobre seus próprios hábitos com o celular, computador, TV ou outros aparelhos</Text>
+              <Text className={styles.homeText}>No final, descubra o que suas respostas dizem sobre o seu uso das telas</Text>
+              <Button
+                className={styles.initButton}
+                type="default"
+                ghost
+                shape=""
+                href="/quiz"
+              >Iniciar
+              </Button>
+
+            </Space>
+          </Card>
         </Content>
 
       </Layout>
