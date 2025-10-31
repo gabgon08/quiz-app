@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import { Radio, Button, Card, Progress, message } from "antd";
+import { Radio, Button, Card, Progress, message, Typography, Space, Layout } from "antd";
 
 const perguntas = [
     {
@@ -98,6 +98,7 @@ const perguntas = [
 ];
 
 export default function Quiz() {
+    const { Title, Text } = Typography
     const [indice, setIndice] = useState(0);
     const [resposta, setResposta] = useState("");
     const [contagem, setContagem] = useState({ A: 0, B: 0, C: 0 });
@@ -132,7 +133,6 @@ export default function Quiz() {
         setFinalizado(false);
     };
     if (finalizado) {
-        // Descobre qual opção teve mais votos
         const maisEscolhida = Object.entries(contagem).reduce((a, b) =>
             a[1] > b[1] ? a : b
         )[0];
@@ -140,11 +140,13 @@ export default function Quiz() {
         const mensagens = {
             A: {
                 titulo: '🟢 Controle equilibrado 🟢',
-                mensagem: 'Você está usando as telas de forma saudável!\nSabe aproveitar o mundo digital, mas também valoriza o tempo fora dele. Continue assim: faça pausas, durma bem e mantenha o controle nas suas mãos!'
+                subtitulo: 'Você está usando as telas de forma saudável!',
+                mensagem: 'Sabe aproveitar o mundo digital, mas também valoriza o tempo fora dele. Continue assim: faça pausas, durma bem e mantenha o controle nas suas mãos!'
             },
             B: {
                 titulo: '🟡 Atenção ao equilíbrio 🟡',
-                mensagem: 'Você usa as telas de forma moderada, mas às vezes elas dominam um pouco seu tempo\nTente criar momentos sem tela, especialmente antes de dormir e nas refeições. Assim você vai ter mais energia e tempo para outras experiências reais'
+                subtitulo: 'Você usa as telas de forma moderada, mas às vezes elas dominam um pouco seu tempo',
+                mensagem: 'Tente criar momentos sem tela, especialmente antes de dormir e nas refeições. Assim você vai ter mais energia e tempo para outras experiências reais'
             },
             C: {
                 titulo: '🔴 Cuidado! Uso excessivo 🔴',
@@ -155,52 +157,63 @@ export default function Quiz() {
         return (
             <Card
             >
-                <h2>RESULTADO FINAL</h2>
+                <Space direction="vertical" align="center">
 
-                <p style={{ whiteSpace: "pre-line" }}>{mensagens[maisEscolhida].mensagem}</p>
+                    <Title level={1}>RESULTADO</Title>
+                    <Title level={2}>{mensagens[maisEscolhida].titulo}</Title>
+                    <Title level={3}>{mensagens[maisEscolhida].subtitulo}</Title>
 
-                <Button
-                    type="primary"
-                    onClick={handleRestart}
-                    style={{ marginTop: 24 }}
-                >
-                    Refazer Quiz
-                </Button>
+                    <Text>{mensagens[maisEscolhida].mensagem}</Text>
+
+                    <Card>
+                        <Text>Obrigado por participar!</Text>
+                    </Card>
+
+                    <Button
+                        type="primary"
+                        onClick={handleRestart}
+                    >
+                        Refazer Quiz
+                    </Button>
+                </Space>
             </Card>
         );
     }
 
 
     return (
-        <Card>
-            <h3>
-                Pergunta {indice + 1} de {perguntas.length}
-            </h3>
-            <p>{perguntaAtual.texto}</p>
-
-            <Radio.Group
-                onChange={(e) => setResposta(e.target.value)}
-                value={resposta}
-                optionType="button"
-                options={perguntaAtual.opcoes.map((opcao, index) => ({
-                    label: opcao.texto,
-                    value: opcao.valor
-                }))}
-            />
-
+        <Layout>
             <Progress
                 percent={Math.round(((indice + 1) / perguntas.length) * 100)}
                 showInfo={false}
             />
+            <Card>
+                <Space direction="vertical" align="center">
+                    <Title level={3}>
+                        Pergunta {indice + 1} de {perguntas.length}
+                    </Title>
+                    <Text>{perguntaAtual.texto}</Text>
 
-            <Button
-                type="primary"
-                block
-                onClick={proximaPergunta}
-            >
-                {indice + 1 < perguntas.length ? "Próxima" : "Finalizar"}
-            </Button>
+                    <Radio.Group
+                        onChange={(e) => setResposta(e.target.value)}
+                        value={resposta}
+                        optionType="button"
+                        options={perguntaAtual.opcoes.map((opcao, index) => ({
+                            label: opcao.texto,
+                            value: opcao.valor
+                        }))}
+                    />
 
-        </Card>
+
+                    <Button
+                        type="primary"
+                        block
+                        onClick={proximaPergunta}
+                    >
+                        {indice + 1 < perguntas.length ? "Próxima" : "Finalizar"}
+                    </Button>
+                </Space>
+            </Card>
+        </Layout>
     );
 }
