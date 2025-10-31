@@ -18,9 +18,12 @@ export default function ThemeProvider({ children }) {
                         defaultBorderColor: '#fddafd',
 
                         defaultHoverBorderColor: 'transparent',
-                        defaultHoverBg: '#fddafd',
+                        defaultHoverBg: '#E6FF47',
                         defaultHoverColor: '#000000dd',
                     },
+                    Progress: {
+                        defaultColor: '#E6FF47'
+                    }
                 }
             }}>
 

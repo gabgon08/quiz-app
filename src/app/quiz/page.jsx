@@ -186,18 +186,19 @@ export default function Quiz() {
 
 
     return (
-        <Layout className={styles.layout}>
-            <Progress
-                percent={Math.round(((indice + 1) / perguntas.length) * 100)}
-                showInfo={false}
-            />
-            <Content className={styles.content}>
-                <Card className={styles.card}>
-                    <Space direction="vertical" align="center" className={styles.space}>
+        <Layout className={styles.quizLayout}>
+            <div className={styles.quizProgress}>
+                <Progress
+                    percent={Math.round(((indice + 1) / perguntas.length) * 100)}
+                    showInfo={false}
+                /></div>
+            <Content className={styles.quizContent}>
+                <Card className={styles.quizCard}>
+                    <Space direction="vertical" align="center" className={styles.quizSpace}>
                         <Title level={3}>
                             Pergunta {indice + 1} de {perguntas.length}
                         </Title>
-                        <Text>{perguntaAtual.texto}</Text>
+                        <Text className={styles.quizText}>{perguntaAtual.texto}</Text>
 
                         {perguntaAtual.opcoes.map((opcao) => (
                             <Button
