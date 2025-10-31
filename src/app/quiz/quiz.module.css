@@ -1,0 +1,30 @@
+.layout {
+    min-height: 100vh;
+    background-color: bisque;
+}
+
+.content {
+    background-color: pink;
+    align-content: center;
+    justify-items: center;
+}
+
+.card {
+    background-color: rgb(121, 209, 209);
+    justify-items: center;
+    width: 70%;
+    max-width: 700px;
+    padding: 0 !important;
+}
+
+.radioButton {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+}
+
+.space {
+    background-color: goldenrod;
+    text-align: center;
+    margin: 0 !important;
+}

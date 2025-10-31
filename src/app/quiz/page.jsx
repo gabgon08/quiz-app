@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Radio, Button, Card, Progress, message, Typography, Space, Layout } from "antd";
+import styles from './quiz.module.css'
 
 const perguntas = [
     {
@@ -99,6 +100,7 @@ const perguntas = [
 
 export default function Quiz() {
     const { Title, Text } = Typography
+    const { Content } = Layout
     const [indice, setIndice] = useState(0);
     const [resposta, setResposta] = useState("");
     const [contagem, setContagem] = useState({ A: 0, B: 0, C: 0 });
@@ -106,15 +108,17 @@ export default function Quiz() {
 
     const perguntaAtual = perguntas[indice];
 
-    const proximaPergunta = () => {
-        if (!resposta) {
+    const proximaPergunta = (opcaoSelecionada) => {
+        if (!opcaoSelecionada) {
             message.warning("Escolha uma opção antes de continuar!")
             return;
         }
 
+
+
         setContagem((prev) => ({
             ...prev,
-            [resposta]: prev[resposta] + 1,
+            [opcaoSelecionada]: prev[opcaoSelecionada] + 1,
         }));
 
         setResposta("");
@@ -182,38 +186,33 @@ export default function Quiz() {
 
 
     return (
-        <Layout>
+        <Layout className={styles.layout}>
             <Progress
                 percent={Math.round(((indice + 1) / perguntas.length) * 100)}
                 showInfo={false}
             />
-            <Card>
-                <Space direction="vertical" align="center">
-                    <Title level={3}>
-                        Pergunta {indice + 1} de {perguntas.length}
-                    </Title>
-                    <Text>{perguntaAtual.texto}</Text>
+            <Content className={styles.content}>
+                <Card className={styles.card}>
+                    <Space direction="vertical" align="center" className={styles.space}>
+                        <Title level={3}>
+                            Pergunta {indice + 1} de {perguntas.length}
+                        </Title>
+                        <Text>{perguntaAtual.texto}</Text>
 
-                    <Radio.Group
-                        onChange={(e) => setResposta(e.target.value)}
-                        value={resposta}
-                        optionType="button"
-                        options={perguntaAtual.opcoes.map((opcao, index) => ({
-                            label: opcao.texto,
-                            value: opcao.valor
-                        }))}
-                    />
-
-
-                    <Button
-                        type="primary"
-                        block
-                        onClick={proximaPergunta}
-                    >
-                        {indice + 1 < perguntas.length ? "Próxima" : "Finalizar"}
-                    </Button>
-                </Space>
-            </Card>
+                        {perguntaAtual.opcoes.map((opcao) => (
+                            <Button
+                                key={opcao.valor}
+                                type={resposta === opcao.valor ? "primary" : "default"}
+                                shape="round"
+                                block
+                                onClick={() => { setResposta(opcao.valor); proximaPergunta(opcao.valor) }}
+                            >
+                                {opcao.texto}
+                            </Button>
+                        ))}
+                    </Space>
+                </Card>
+            </Content>
         </Layout>
     );
 }
