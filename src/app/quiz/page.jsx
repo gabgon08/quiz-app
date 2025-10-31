@@ -1,3 +1,5 @@
+import React from 'react'
+
 let contagem = {
     A: 0,
     B: 0,
@@ -33,8 +35,13 @@ function mostrarResultado(respostas) {
     }
 }
 
-selecionar("C")
-selecionar("C")
-selecionar("B")
-selecionar("C")
-mostrarResultado(contagem)
+function Quiz() {
+    return (
+        <div>
+            QUIZ
+        </div>
+    )
+}
+
+export default Quiz
+
