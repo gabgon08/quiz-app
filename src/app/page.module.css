@@ -1,3 +1,16 @@
-.teste {
-    background-color: aqua;
+.layout {
+    min-height: 100vh;
+    background-color: bisque;
+}
+
+.content {
+    background-color: pink;
+    align-content: center;
+    text-align: center;
+}
+
+.space {
+    background-color: green;
+    width: 70%;
+    max-width: 700px;
 }
