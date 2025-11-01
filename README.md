@@ -1,6 +1,6 @@
 # Projeto: Quiz Tempo de Tela
 
-<h3>A aplicação consiste em um quiz com 10 perguntas sobre o tempo que o usuário passa utilizando eletrônicos. No final, o sistema exibe um resultado baseado nas respostas fornecidas, sem respostas certas ou erradas. Este é um projeto full-stack desenvolvido em Node.js e React.</h3></br>
+<h3>A aplicação consiste em um quiz com 10 perguntas sobre o tempo que o usuário passa utilizando eletrônicos. No final, o sistema exibe um resultado baseado nas respostas fornecidas, sem respostas certas ou erradas. Projeto full-stack desenvolvido em Node.js e React.</h3></br>
 
 <p>O principal objetivo do projeto é promover uma reflexão sobre o uso de dispositivos eletrônicos, através de uma experiência interativa e moderna, desenvolvida com boas práticas de JavaScript.</p></br>
 
