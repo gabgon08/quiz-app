@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Button, Card, Progress, message, Typography, Space, Layout } from "antd";
 import styles from './quiz.module.css'
-import { ReloadOutlined } from "@ant-design/icons";
 
 const perguntas = [
     {
@@ -114,8 +113,6 @@ export default function Quiz() {
             message.warning("Escolha uma opção antes de continuar!")
             return;
         }
-
-
 
         setContagem((prev) => ({
             ...prev,
