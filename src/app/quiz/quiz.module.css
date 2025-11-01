@@ -92,15 +92,17 @@
 
 .thxCard {
     background-color: transparent;
-    border-radius: 2rem;
+    border-radius: 1.7rem;
+    animation: pulse 2s infinite alternate;
+    margin-top: 1rem;
 }
 
 .thxText {
     font-size: 1.3rem;
 }
 
-.thxCard {
-    animation: pulse 2s infinite alternate;
+.thxButton {
+    font-size: 1rem;
 }
 
 @keyframes pulse {

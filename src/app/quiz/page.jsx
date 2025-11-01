@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button, Card, Progress, message, Typography, Space, Layout } from "antd";
 import styles from './quiz.module.css'
+import { ReloadOutlined } from "@ant-design/icons";
 
 const perguntas = [
     {
@@ -179,17 +180,20 @@ export default function Quiz() {
 
                             <Text className={styles.finishText}>{mensagens[maisEscolhida].mensagem}</Text>
 
-                            <Card className={styles.thxCard}>
-                                <Text className={styles.thxText}>Obrigado por participar!</Text>
+                            <Card className={styles.thxCard} size='small'>
+                                <Space direction="vertical">
+                                    <Text className={styles.thxText}>Obrigado por participar!</Text>
+                                    <Button
+                                        className={styles.thxButton}
+                                        type="text"
+                                        onClick={handleRestart}
+                                    // href="/"
+                                    >
+                                        Refazer
+                                    </Button>
+                                </Space>
                             </Card>
 
-                            {/* <Button
-                                type="primary"
-                                onClick={handleRestart}
-                            // href="/"
-                            >
-                                Refazer Quiz
-                            </Button> */}
                         </Space>
                     </Card>
                 </Content>

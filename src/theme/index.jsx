@@ -20,9 +20,15 @@ export default function ThemeProvider({ children }) {
                         defaultHoverBorderColor: 'transparent',
                         defaultHoverBg: '#E6FF47',
                         defaultHoverColor: '#000000dd',
+
+                        textHoverBg: '#E6FF47',
+                        textTextHoverColor: '#000000dd'
                     },
                     Progress: {
                         defaultColor: '#E6FF47'
+                    },
+                    Card: {
+                        bodyPaddingSM: 16
                     }
                 }
             }}>
