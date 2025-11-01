@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button, Card, Progress, message, Typography, Space, Layout } from "antd";
 import styles from './quiz.module.css'
+import { motion, AnimatePresence } from "framer-motion";
 
 const perguntas = [
     {
@@ -128,12 +129,6 @@ export default function Quiz() {
         }
     };
 
-    const handleRestart = () => {
-        setIndice(0);
-        setContagem({ A: 0, B: 0, C: 0 });
-        setResposta('');
-        setFinalizado(false);
-    };
     if (finalizado) {
         const maisEscolhida = Object.entries(contagem).reduce((a, b) =>
             a[1] > b[1] ? a : b
@@ -160,39 +155,49 @@ export default function Quiz() {
         return (
             <Layout className={styles.quizLayout}>
                 <Content className={styles.quizContent}>
-                    <Card className={`${styles.finishCard} ${maisEscolhida === "A"
-                        ? styles.bgVerde
-                        : maisEscolhida === "B"
-                            ? styles.bgAmarelo
-                            : styles.bgVermelho
-                        }`}>
-                        <Space
-                            direction="vertical"
-                            align="center"
-                            size='large'>
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key="resultado"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -30 }}
+                            transition={{ duration: 2, ease: "easeInOut" }}
+                            className={styles.quizMotionDiv}
+                        >
+                            <Card className={`${styles.finishCard} ${maisEscolhida === "A"
+                                ? styles.bgVerde
+                                : maisEscolhida === "B"
+                                    ? styles.bgAmarelo
+                                    : styles.bgVermelho
+                                }`}>
+                                <Space
+                                    direction="vertical"
+                                    align="center"
+                                    size='large'>
 
-                            <Title level={1}>RESULTADO</Title>
-                            <Title level={2}>{mensagens[maisEscolhida].titulo}</Title>
-                            <Title level={3}>{mensagens[maisEscolhida].subtitulo}</Title>
+                                    <Title level={1}>RESULTADO</Title>
+                                    <Title level={2}>{mensagens[maisEscolhida].titulo}</Title>
+                                    <Title level={3}>{mensagens[maisEscolhida].subtitulo}</Title>
 
-                            <Text className={styles.finishText}>{mensagens[maisEscolhida].mensagem}</Text>
+                                    <Text className={styles.finishText}>{mensagens[maisEscolhida].mensagem}</Text>
 
-                            <Card className={styles.thxCard} size='small'>
-                                <Space direction="vertical">
-                                    <Text className={styles.thxText}>Obrigado por participar!</Text>
-                                    <Button
-                                        className={styles.thxButton}
-                                        type="text"
-                                        onClick={handleRestart}
-                                    // href="/"
-                                    >
-                                        Refazer
-                                    </Button>
+                                    <Card className={styles.thxCard} size='small'>
+                                        <Space direction="vertical">
+                                            <Text className={styles.thxText}>Obrigado por participar!</Text>
+                                            <Button
+                                                className={styles.thxButton}
+                                                type="text"
+                                                href="/"
+                                            >
+                                                Refazer
+                                            </Button>
+                                        </Space>
+                                    </Card>
+
                                 </Space>
                             </Card>
-
-                        </Space>
-                    </Card>
+                        </motion.div>
+                    </AnimatePresence>
                 </Content>
             </Layout>
         );
@@ -207,36 +212,47 @@ export default function Quiz() {
             </Progress>
 
             <Content className={styles.quizContent}>
-                <Card className={styles.quizCard}>
-                    <Space
-                        className={styles.quizSpace}
-                        direction="vertical"
-                        align="center"
-                        size='large'
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={`pergunta-${indice}`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3, ease: 'easeIn' }}
+                        className={styles.quizMotionDiv}
                     >
+                        <Card className={styles.quizCard}>
+                            <Space
+                                className={styles.quizSpace}
+                                direction="vertical"
+                                align="center"
+                                size='large'
+                            >
 
-                        <Title level={3}>
-                            Pergunta {indice + 1} de {perguntas.length}
-                        </Title>
+                                <Title level={3}>
+                                    Pergunta {indice + 1} de {perguntas.length}
+                                </Title>
 
-                        <Text className={styles.quizText}>{perguntaAtual.texto}</Text>
+                                <Text className={styles.quizText}>{perguntaAtual.texto}</Text>
 
-                        <div className={styles.divButton}>
-                            {perguntaAtual.opcoes.map((opcao) => (
-                                <Button
-                                    className={styles.optButton}
-                                    key={opcao.valor}
-                                    type={resposta === opcao.valor ? "primary" : "default"}
-                                    shape="round"
-                                    block
-                                    onClick={() => { setResposta(opcao.valor); proximaPergunta(opcao.valor) }}
-                                >
-                                    {opcao.texto}
-                                </Button>
-                            ))}
-                        </div>
-                    </Space>
-                </Card>
+                                <div className={styles.divButton}>
+                                    {perguntaAtual.opcoes.map((opcao) => (
+                                        <Button
+                                            className={styles.optButton}
+                                            key={opcao.valor}
+                                            type={resposta === opcao.valor ? "primary" : "default"}
+                                            shape="round"
+                                            block
+                                            onClick={() => { setResposta(opcao.valor); proximaPergunta(opcao.valor) }}
+                                        >
+                                            {opcao.texto}
+                                        </Button>
+                                    ))}
+                                </div>
+                            </Space>
+                        </Card>
+                    </motion.div>
+                </AnimatePresence>
             </Content>
         </Layout>
     );

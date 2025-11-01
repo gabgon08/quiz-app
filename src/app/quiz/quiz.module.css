@@ -12,6 +12,12 @@
     animation: gradientScroll 18s ease-in-out infinite;
 }
 
+.quizMotionDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 .quizContent {
     align-content: center;
     justify-items: center;

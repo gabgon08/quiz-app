@@ -23,8 +23,8 @@ export default function Home() {
               size='large'
             >
               <Title level={1}>COMO ESTÁ MEU TEMPO DE TELA?</Title>
-              <Title level={3}>‼️Responda com sinceridade‼️</Title>
-              <Text className={styles.homeText}>Este quiz não tem certo ou errado, são 10 perguntas que servem para pensar sobre seus próprios hábitos com o celular, computador, TV ou outros aparelhos</Text>
+              <Title level={3}>INSTRUÇÕES:</Title>
+              <Text className={styles.homeText}>Este quiz não tem certo ou errado, portanto <strong>responda com sinceridade. </strong>São 10 perguntas que servem para pensar sobre seus próprios hábitos com o celular, computador, TV ou outros aparelhos</Text>
               <Text className={styles.homeText}>No final, descubra o que suas respostas dizem sobre o seu uso das telas</Text>
               <Button
                 className={styles.initButton}
