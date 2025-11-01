@@ -10,12 +10,12 @@ export default function ThemeProvider({ children }) {
             theme={{
                 token: {
                     fontFamily: 'var(--font-principal)',
-                    colorText: '#fddafd',
+                    colorText: '#fadefa',
                 },
                 components: {
                     Button: {
                         defaultBg: 'transparent',
-                        defaultBorderColor: '#fddafd',
+                        defaultBorderColor: '#fadefa',
 
                         defaultHoverBorderColor: 'transparent',
                         defaultHoverBg: '#E6FF47',

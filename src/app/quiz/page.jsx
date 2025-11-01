@@ -45,8 +45,8 @@ const perguntas = [
         id: 5,
         texto: "Quando está com tempo livre ou com tédio, o que costuma fazer primeiro?",
         opcoes: [
-            { valor: "A", texto: "Procuro algo fora das telas (ler, conversar, brincar, caminhar)" },
-            { valor: "B", texto: "Pego o celular ou o videogame, mas depois faço outras coisas" },
+            { valor: "A", texto: "Procuro algo fora das telas (ler, conversar, brincar)" },
+            { valor: "B", texto: "Uso o celular ou videogame, mas depois faço outras coisas" },
             { valor: "C", texto: "Vou direto para o celular, TV ou computador" },
         ],
     },
@@ -143,74 +143,97 @@ export default function Quiz() {
 
         const mensagens = {
             A: {
-                titulo: '🟢 Controle equilibrado 🟢',
+                titulo: 'Controle equilibrado',
                 subtitulo: 'Você está usando as telas de forma saudável!',
                 mensagem: 'Sabe aproveitar o mundo digital, mas também valoriza o tempo fora dele. Continue assim: faça pausas, durma bem e mantenha o controle nas suas mãos!'
             },
             B: {
-                titulo: '🟡 Atenção ao equilíbrio 🟡',
+                titulo: 'Atenção ao equilíbrio',
                 subtitulo: 'Você usa as telas de forma moderada, mas às vezes elas dominam um pouco seu tempo',
                 mensagem: 'Tente criar momentos sem tela, especialmente antes de dormir e nas refeições. Assim você vai ter mais energia e tempo para outras experiências reais'
             },
             C: {
-                titulo: '🔴 Cuidado! Uso excessivo 🔴',
-                mensagem: 'As telas estão ocupando mais espaço do que deveriam\nTente estabelecer horários, fazer pausas, brincar ao ar livre e conversar mais com amigos e família. Lembre-se: o controle pode, e deve, estar nas suas mãos!'
+                titulo: 'Cuidado! Uso excessivo',
+                subtitulo: 'As telas estão ocupando mais espaço do que deveriam',
+                mensagem: 'Tente estabelecer horários, fazer pausas, brincar ao ar livre e conversar mais com amigos e família. Lembre-se: o controle pode, e deve, estar nas suas mãos!'
             },
         }
 
         return (
-            <Card
-            >
-                <Space direction="vertical" align="center">
+            <Layout className={styles.quizLayout}>
+                <Content className={styles.quizContent}>
+                    <Card className={`${styles.finishCard} ${maisEscolhida === "A"
+                        ? styles.bgVerde
+                        : maisEscolhida === "B"
+                            ? styles.bgAmarelo
+                            : styles.bgVermelho
+                        }`}>
+                        <Space
+                            direction="vertical"
+                            align="center"
+                            size='large'>
 
-                    <Title level={1}>RESULTADO</Title>
-                    <Title level={2}>{mensagens[maisEscolhida].titulo}</Title>
-                    <Title level={3}>{mensagens[maisEscolhida].subtitulo}</Title>
+                            <Title level={1}>RESULTADO</Title>
+                            <Title level={2}>{mensagens[maisEscolhida].titulo}</Title>
+                            <Title level={3}>{mensagens[maisEscolhida].subtitulo}</Title>
 
-                    <Text>{mensagens[maisEscolhida].mensagem}</Text>
+                            <Text className={styles.finishText}>{mensagens[maisEscolhida].mensagem}</Text>
 
-                    <Card>
-                        <Text>Obrigado por participar!</Text>
+                            <Card className={styles.thxCard}>
+                                <Text className={styles.thxText}>Obrigado por participar!</Text>
+                            </Card>
+
+                            {/* <Button
+                                type="primary"
+                                onClick={handleRestart}
+                            // href="/"
+                            >
+                                Refazer Quiz
+                            </Button> */}
+                        </Space>
                     </Card>
-
-                    <Button
-                        type="primary"
-                        onClick={handleRestart}
-                    >
-                        Refazer Quiz
-                    </Button>
-                </Space>
-            </Card>
+                </Content>
+            </Layout>
         );
     }
 
 
     return (
         <Layout className={styles.quizLayout}>
-            <div className={styles.quizProgress}>
-                <Progress
-                    percent={Math.round(((indice + 1) / perguntas.length) * 100)}
-                    showInfo={false}
-                /></div>
+            <Progress
+                percent={Math.round(((indice + 1) / perguntas.length) * 100)}
+                showInfo={false}>
+            </Progress>
+
             <Content className={styles.quizContent}>
                 <Card className={styles.quizCard}>
-                    <Space direction="vertical" align="center" className={styles.quizSpace}>
+                    <Space
+                        className={styles.quizSpace}
+                        direction="vertical"
+                        align="center"
+                        size='large'
+                    >
+
                         <Title level={3}>
                             Pergunta {indice + 1} de {perguntas.length}
                         </Title>
+
                         <Text className={styles.quizText}>{perguntaAtual.texto}</Text>
 
-                        {perguntaAtual.opcoes.map((opcao) => (
-                            <Button
-                                key={opcao.valor}
-                                type={resposta === opcao.valor ? "primary" : "default"}
-                                shape="round"
-                                block
-                                onClick={() => { setResposta(opcao.valor); proximaPergunta(opcao.valor) }}
-                            >
-                                {opcao.texto}
-                            </Button>
-                        ))}
+                        <div className={styles.divButton}>
+                            {perguntaAtual.opcoes.map((opcao) => (
+                                <Button
+                                    className={styles.optButton}
+                                    key={opcao.valor}
+                                    type={resposta === opcao.valor ? "primary" : "default"}
+                                    shape="round"
+                                    block
+                                    onClick={() => { setResposta(opcao.valor); proximaPergunta(opcao.valor) }}
+                                >
+                                    {opcao.texto}
+                                </Button>
+                            ))}
+                        </div>
                     </Space>
                 </Card>
             </Content>

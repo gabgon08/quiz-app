@@ -19,13 +19,35 @@
 
 .quizCard {
     justify-items: center;
-    width: 70%;
+    width: 90%;
     max-width: 700px;
+    background-color: #00000083;
+    border: 0;
+    padding: 1rem;
+    border-radius: 2rem;
 }
 
 .quizSpace {
     text-align: center;
 }
+
+.quizText {
+    font-size: 1.3rem;
+}
+
+.divButton {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.optButton {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    padding: 2rem;
+    white-space: normal;
+}
+
 
 @keyframes gradientScroll {
     0% {
@@ -38,5 +60,55 @@
 
     100% {
         background-position: 50% 0%;
+    }
+}
+
+
+.finishCard {
+    justify-items: center;
+    width: 90%;
+    max-width: 700px;
+    border: 0;
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.finishText {
+    font-size: 1.2rem;
+}
+
+.bgVerde {
+    background: #5eac5cea;
+}
+
+.bgAmarelo {
+    background: #d6a70dd2;
+}
+
+.bgVermelho {
+    background: #aa0728de;
+}
+
+.thxCard {
+    background-color: transparent;
+    border-radius: 2rem;
+}
+
+.thxText {
+    font-size: 1.3rem;
+}
+
+.thxCard {
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 20px 7px #e5f771;
+    }
+
+    to {
+        box-shadow: 0 0 10px 10px #CC66DA;
     }
 }
