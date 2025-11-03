@@ -161,7 +161,7 @@ export default function Quiz() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -30 }}
-                            transition={{ duration: 2, ease: "easeInOut" }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
                             className={styles.quizMotionDiv}
                         >
                             <Card className={`${styles.finishCard} ${maisEscolhida === "A"
