@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const perguntas = [
     {
         id: 1,
-        texto: "Quanto tempo, em média, você passa por dia em frente a uma tela (celular, computador, tablet, TV, etc.) fora o horário de aula?",
+        texto: "Quanto tempo, em média, você passa por dia em frente a uma tela (celular, computador, tablet, TV, etc.)?",
         opcoes: [
             { valor: "A", texto: "Menos de 2 horas" },
             { valor: "B", texto: "De 2 a 4 horas" },
@@ -46,7 +46,7 @@ const perguntas = [
         id: 5,
         texto: "Quando está com tempo livre ou com tédio, o que costuma fazer primeiro?",
         opcoes: [
-            { valor: "A", texto: "Procuro algo fora das telas (ler, conversar, brincar)" },
+            { valor: "A", texto: "Procuro algo fora das telas (ler, conversar, etc.)" },
             { valor: "B", texto: "Uso o celular ou videogame, mas depois faço outras coisas" },
             { valor: "C", texto: "Vou direto para o celular, TV ou computador" },
         ],
