@@ -342,17 +342,17 @@ export default function Quiz() {
                                     </Title>
 
                                     <Title level={3}>
+                                        Você acertou {totalCertas} de{" "}
+                                        {perguntas.length} perguntas
+                                    </Title>
+
+                                    <Title level={4}>
                                         {resultado.subtitulo}
                                     </Title>
 
                                     <Text className={styles.finishText}>
                                         {resultado.mensagem}
                                     </Text>
-
-                                    <Title level={4}>
-                                        Você acertou {totalCertas} de{" "}
-                                        {perguntas.length} perguntas
-                                    </Title>
 
                                     <Card
                                         className={styles.thxCard}
