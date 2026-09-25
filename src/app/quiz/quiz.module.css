@@ -26,7 +26,7 @@
     justify-items: center;
     width: 90%;
     max-width: 700px;
-    background-color: #00000083;
+    background-color: rgba(0, 0, 0, 0.514);
     border: 0;
     padding: 1rem;
     border-radius: 2rem;
@@ -69,6 +69,7 @@
 
 .bgVerde {
     background: #5eac5cea;
+
 }
 
 .bgAmarelo {
@@ -77,6 +78,12 @@
 
 .bgVermelho {
     background: #aa0728de;
+}
+
+.bgAmarelo,
+.bgVerde,
+.bgVermelho {
+    border: 4px solid rgba(255, 255, 255, 0.89);
 }
 
 .thxCard {
