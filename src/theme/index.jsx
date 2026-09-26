@@ -10,22 +10,22 @@ export default function ThemeProvider({ children }) {
             theme={{
                 token: {
                     fontFamily: 'var(--font-principal)',
-                    colorText: '#fadefa',
+                    colorText: '#ffffff',
                 },
                 components: {
                     Button: {
                         defaultBg: 'transparent',
-                        defaultBorderColor: '#fadefa',
+                        defaultBorderColor: '#ffffff',
 
                         defaultHoverBorderColor: 'transparent',
-                        defaultHoverBg: '#E6FF47',
+                        defaultHoverBg: '#ffffff',
                         defaultHoverColor: '#000000dd',
 
-                        textHoverBg: '#E6FF47',
+                        textHoverBg: '#ffffff',
                         textTextHoverColor: '#000000dd'
                     },
                     Progress: {
-                        defaultColor: '#E6FF47'
+                        defaultColor: '#ffffff'
                     },
                     Card: {
                         bodyPaddingSM: 16

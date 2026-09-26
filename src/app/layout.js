@@ -10,8 +10,8 @@ const mainFont = Roboto_Slab({
 })
 
 export const metadata = {
-  title: "Quiz | Tempo de Tela",
-  description: "Como está meu tempo de tela?",
+  title: "Quiz | Liga da Saúde",
+  description: "Vitaminas e nutrientes",
 };
 
 export default function RootLayout({ children }) {

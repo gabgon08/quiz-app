@@ -8,116 +8,262 @@ import { motion, AnimatePresence } from "framer-motion";
 const perguntas = [
     {
         id: 1,
-        texto: "Quanto tempo, em média, você passa por dia em frente a uma tela (celular, computador, tablet, TV, etc.)?",
+        texto: "Qual é uma das principais funções da Vitamina A?",
         opcoes: [
-            { valor: "A", texto: "Menos de 2 horas" },
-            { valor: "B", texto: "De 2 a 4 horas" },
-            { valor: "C", texto: "Mais de 4 horas" },
+            { valor: "A", texto: "Formar as fibras do intestino" },
+            { valor: "B", texto: "Transportar oxigênio pelo sangue" },
+            { valor: "C", texto: "Ajudar no funcionamento da visão" },
+            { valor: "D", texto: "Formar exclusivamente os músculos" },
         ],
+        resposta: "C",
     },
     {
         id: 2,
-        texto: "Você costuma usar o celular ou ver vídeos antes de dormir?",
+        texto: "Qual destes alimentos é uma fonte de Vitamina A?",
         opcoes: [
-            { valor: "A", texto: "Não, evito usar antes de dormir" },
-            { valor: "B", texto: "Às vezes, uso rapidinho" },
-            { valor: "C", texto: "Sim, quase sempre uso até dormir" },
+            { valor: "A", texto: "Cenoura" },
+            { valor: "B", texto: "Açúcar" },
+            { valor: "C", texto: "Refrigerante" },
+            { valor: "D", texto: "Óleo de cozinha" },
         ],
+        resposta: "A",
     },
     {
         id: 3,
-        texto: "Quando alguém pede para você parar de usar o celular ou o videogame, como você reage?",
+        texto: "A Vitamina B é, na verdade, um grupo de vitaminas. Qual alternativa apresenta uma função relacionada às vitaminas do complexo B?",
         opcoes: [
-            { valor: "A", texto: "Desligo tranquilamente" },
-            { valor: "B", texto: "Me irrito um pouco, mas desligo" },
-            { valor: "C", texto: "Odeio e quero continuar" },
+            {
+                valor: "A",
+                texto: "Participar de processos importantes para o funcionamento do organismo, como o metabolismo dos nutrientes",
+            },
+            { valor: "B", texto: "Formar somente os dentes" },
+            { valor: "C", texto: "Substituir todas as outras vitaminas" },
+            { valor: "D", texto: "Ser responsável exclusivamente pela visão" },
         ],
+        resposta: "A",
     },
     {
         id: 4,
-        texto: "Você costuma fazer pausas durante o uso das telas para se alongar, descansar os olhos, se movimentar ou conversar com alguém?",
+        texto: "Qual destes alimentos pode fornecer vitaminas do complexo B?",
         opcoes: [
-            { valor: "A", texto: "Sim, com frequência" },
-            { valor: "B", texto: "Às vezes lembro" },
-            { valor: "C", texto: "Quase nunca" },
+            { valor: "A", texto: "Açúcar" },
+            { valor: "B", texto: "Feijão" },
+            { valor: "C", texto: "Refrigerante" },
+            { valor: "D", texto: "Bala" },
         ],
+        resposta: "B",
     },
     {
         id: 5,
-        texto: "Quando está com tempo livre ou com tédio, o que costuma fazer primeiro?",
+        texto: "Qual vitamina auxilia na absorção do ferro?",
         opcoes: [
-            { valor: "A", texto: "Procuro algo fora das telas (ler, conversar, etc.)" },
-            { valor: "B", texto: "Uso o celular ou videogame, mas depois faço outras coisas" },
-            { valor: "C", texto: "Vou direto para o celular, TV ou computador" },
+            { valor: "A", texto: "Vitamina A" },
+            { valor: "B", texto: "Vitamina B" },
+            { valor: "C", texto: "Vitamina C" },
+            { valor: "D", texto: "Vitamina D" },
         ],
+        resposta: "C",
     },
     {
         id: 6,
-        texto: "Você costuma usar o celular durante as refeições ou enquanto conversa com a família?",
+        texto: "Qual destes alimentos é conhecido por ser fonte de Vitamina C?",
         opcoes: [
-            { valor: "A", texto: "Não, guardo o aparelho nesses momentos" },
-            { valor: "B", texto: "Às vezes" },
-            { valor: "C", texto: "Sim, quase sempre" },
+            { valor: "A", texto: "Manteiga" },
+            { valor: "B", texto: "Arroz branco" },
+            { valor: "C", texto: "Queijo" },
+            { valor: "D", texto: "Laranja" },
         ],
+        resposta: "D",
     },
     {
         id: 7,
-        texto: "Já deixou de fazer alguma atividade (brincar, esportes, leitura, conversar, sair) por estar no celular?",
+        texto: "Além de auxiliar na absorção do ferro, a Vitamina C participa de qual processo?",
         opcoes: [
-            { valor: "A", texto: "Não, consigo equilibrar bem" },
-            { valor: "B", texto: "Às vezes acontece" },
-            { valor: "C", texto: "Sim, muitas vezes" },
+            { valor: "A", texto: "Formação exclusiva dos ossos" },
+            { valor: "B", texto: "Produção de fibras alimentares" },
+            { valor: "C", texto: "Formação de colágeno e cicatrização" },
+            { valor: "D", texto: "Formação do esmalte dos lápis" },
         ],
+        resposta: "C",
     },
     {
         id: 8,
-        texto: "Se você passasse um dia inteiro sem telas, como se sentiria?",
+        texto: "Qual vitamina está relacionada à formação e à manutenção dos ossos e dentes?",
         opcoes: [
-            { valor: "A", texto: "Tranquilo(a), encontraria outras coisas para fazer" },
-            { valor: "B", texto: "Com tédio, mas daria um jeito" },
-            { valor: "C", texto: "Ansiedade a mil e com vontade de usar" },
+            { valor: "A", texto: "Vitamina A" },
+            { valor: "B", texto: "Vitamina D" },
+            { valor: "C", texto: "Vitamina B" },
+            { valor: "D", texto: "Vitamina C" },
         ],
+        resposta: "B",
     },
     {
         id: 9,
-        texto: "Você costuma sentir cansaço, dor nos olhos ou sono ruim depois de muito tempo nas telas?",
+        texto: "A Vitamina D ajuda o organismo a aproveitar qual mineral?",
         opcoes: [
-            { valor: "A", texto: "Não" },
-            { valor: "B", texto: "Às vezes" },
-            { valor: "C", texto: "Sim, frequentemente" },
+            { valor: "A", texto: "Cálcio" },
+            { valor: "B", texto: "Ferro" },
+            { valor: "C", texto: "Sódio" },
+            { valor: "D", texto: "Potássio" },
         ],
+        resposta: "A",
     },
     {
         id: 10,
-        texto: "Você conversa com alguém da sua família sobre quanto tempo passa nas telas e combinam limites juntos?",
+        texto: "Qual mineral é muito importante para a formação e manutenção dos ossos e dentes?",
         opcoes: [
-            { valor: "A", texto: "Sim, temos combinado" },
-            { valor: "B", texto: "Às vezes conversamos" },
-            { valor: "C", texto: "Não costumo falar sobre isso" },
+            { valor: "A", texto: "Ferro" },
+            { valor: "B", texto: "Cálcio" },
+            { valor: "C", texto: "Sódio" },
+            { valor: "D", texto: "Zinco" },
         ],
+        resposta: "B",
     },
-
+    {
+        id: 11,
+        texto: "Qual destes alimentos é uma fonte conhecida de cálcio?",
+        opcoes: [
+            { valor: "A", texto: "Açúcar" },
+            { valor: "B", texto: "Refrigerante" },
+            { valor: "C", texto: "Bala" },
+            { valor: "D", texto: "Leite" },
+        ],
+        resposta: "D",
+    },
+    {
+        id: 12,
+        texto: "Qual é uma importante função do ferro no organismo?",
+        opcoes: [
+            { valor: "A", texto: "Formar exclusivamente os dentes" },
+            { valor: "B", texto: "Produzir fibras alimentares" },
+            { valor: "C", texto: "Participar da formação da hemoglobina e do transporte de oxigênio" },
+            { valor: "D", texto: "Substituir as vitaminas" },
+        ],
+        resposta: "C",
+    },
+    {
+        id: 13,
+        texto: "Qual destes alimentos pode ser uma fonte de ferro?",
+        opcoes: [
+            { valor: "A", texto: "Açúcar" },
+            { valor: "B", texto: "Refrigerante" },
+            { valor: "C", texto: "Feijão" },
+            { valor: "D", texto: "Bala de frutas" },
+        ],
+        resposta: "C",
+    },
+    {
+        id: 14,
+        texto: "Para que as proteínas são importantes no nosso organismo?",
+        opcoes: [
+            {
+                valor: "A",
+                texto: "Para participar da construção e manutenção dos tecidos do corpo",
+            },
+            { valor: "B", texto: "Para substituir todas as vitaminas" },
+            { valor: "C", texto: "Para formar apenas os dentes" },
+            { valor: "D", texto: "Para produzir exclusivamente fibras" },
+        ],
+        resposta: "A",
+    },
+    {
+        id: 15,
+        texto: "Qual destes alimentos é uma fonte de proteínas?",
+        opcoes: [
+            { valor: "A", texto: "Açúcar" },
+            { valor: "B", texto: "Óleo" },
+            { valor: "C", texto: "Refrigerante" },
+            { valor: "D", texto: "Ovo" },
+        ],
+        resposta: "D",
+    },
+    {
+        id: 16,
+        texto: "Qual é uma importante função das fibras alimentares?",
+        opcoes: [
+            { valor: "A", texto: "Formar a hemoglobina" },
+            { valor: "B", texto: "Contribuir para o bom funcionamento do intestino" },
+            { valor: "C", texto: "Formar exclusivamente os ossos" },
+            { valor: "D", texto: "Substituir a água do organismo" },
+        ],
+        resposta: "B",
+    },
+    {
+        id: 17,
+        texto: "Em qual grupo podemos encontrar boas fontes de fibras?",
+        opcoes: [
+            { valor: "A", texto: "Frutas, verduras e cereais" },
+            { valor: "B", texto: "Refrigerantes e balas" },
+            { valor: "C", texto: "Açúcar e óleo" },
+            { valor: "D", texto: "Manteiga e refrigerante" },
+        ],
+        resposta: "A",
+    },
+    {
+        id: 18,
+        texto: "Qual alternativa apresenta somente nutrientes estudados pela Liga da Saúde?",
+        opcoes: [
+            { valor: "A", texto: "Vitamina C, plástico, cálcio e proteínas" },
+            { valor: "B", texto: "Vitamina C, cálcio, ferro e proteínas" },
+            { valor: "C", texto: "Ferro, papel, fibras e Vitamina D" },
+            { valor: "D", texto: "Cálcio, ferro, madeira e Vitamina A" },
+        ],
+        resposta: "B",
+    },
+    {
+        id: 19,
+        texto: "Uma criança quer aprender mais sobre os nutrientes dos alimentos. O que pode ajudá-la nessa investigação?",
+        opcoes: [
+            { valor: "A", texto: "Escolher um alimento apenas pela cor da embalagem" },
+            { valor: "B", texto: "Ignorar a tabela nutricional" },
+            { valor: "C", texto: "Observar as informações presentes nos rótulos dos alimentos" },
+            { valor: "D", texto: "Escolher sempre o alimento com a embalagem mais bonita" },
+        ],
+        resposta: "C",
+    },
+    {
+        id: 20,
+        texto: "Qual frase representa melhor a principal descoberta da Liga da Saúde?",
+        opcoes: [
+            { valor: "A", texto: "Todos os nutrientes possuem exatamente a mesma função" },
+            { valor: "B", texto: "Apenas as vitaminas são importantes para o nosso corpo" },
+            {
+                valor: "C",
+                texto: "Um único nutriente consegue realizar todas as funções necessárias ao corpo",
+            },
+            {
+                valor: "D",
+                texto: "Diferentes vitaminas e nutrientes possuem diferentes funções no organismo",
+            },
+        ],
+        resposta: "D",
+    },
 ];
-
 export default function Quiz() {
-    const { Title, Text } = Typography
-    const { Content } = Layout
+    const { Title, Text } = Typography;
+    const { Content } = Layout;
+
     const [indice, setIndice] = useState(0);
     const [resposta, setResposta] = useState("");
-    const [contagem, setContagem] = useState({ A: 0, B: 0, C: 0 });
+    const [contagem, setContagem] = useState({
+        certas: 0,
+        erradas: 0,
+    });
     const [finalizado, setFinalizado] = useState(false);
 
     const perguntaAtual = perguntas[indice];
 
     const proximaPergunta = (opcaoSelecionada) => {
         if (!opcaoSelecionada) {
-            message.warning("Escolha uma opção antes de continuar!")
+            message.warning("Escolha uma opção antes de continuar!");
             return;
         }
 
+        const acertou = opcaoSelecionada === perguntaAtual.resposta;
+
         setContagem((prev) => ({
-            ...prev,
-            [opcaoSelecionada]: prev[opcaoSelecionada] + 1,
+            certas: prev.certas + (acertou ? 1 : 0),
+            erradas: prev.erradas + (acertou ? 0 : 1),
         }));
 
         setResposta("");
@@ -130,26 +276,40 @@ export default function Quiz() {
     };
 
     if (finalizado) {
-        const maisEscolhida = Object.entries(contagem).reduce((a, b) =>
-            a[1] > b[1] ? a : b
-        )[0];
+        // Como o último setContagem é assíncrono,
+        // calculamos o resultado incluindo a última resposta.
+        const ultimaRespostaFoiCerta =
+            resposta === perguntaAtual.resposta;
 
-        const mensagens = {
-            A: {
-                titulo: 'Controle equilibrado',
-                subtitulo: 'Você está usando as telas de forma saudável!',
-                mensagem: 'Sabe aproveitar o mundo digital, mas também valoriza o tempo fora dele. Continue assim: faça pausas, durma bem e mantenha o controle nas suas mãos!'
-            },
-            B: {
-                titulo: 'Atenção ao equilíbrio',
-                subtitulo: 'Você usa as telas de forma moderada, mas às vezes elas dominam um pouco seu tempo',
-                mensagem: 'Tente criar momentos sem tela, especialmente antes de dormir e nas refeições. Assim você vai ter mais energia e tempo para outras experiências reais'
-            },
-            C: {
-                titulo: 'Cuidado! Uso excessivo',
-                subtitulo: 'As telas estão ocupando mais espaço do que deveriam',
-                mensagem: 'Tente estabelecer horários, fazer pausas, brincar ao ar livre e conversar mais com amigos e família. Lembre-se: o controle pode, e deve, estar nas suas mãos!'
-            },
+        const totalCertas =
+            contagem.certas + (ultimaRespostaFoiCerta ? 1 : 0);
+
+        let resultado;
+
+        if (totalCertas <= 10) {
+            resultado = {
+                titulo: "Precisa melhorar",
+                subtitulo: "Continue aprendendo sobre vitaminas e nutrientes!",
+                mensagem:
+                    "Você ainda pode aprender bastante sobre a importância dos nutrientes para o nosso corpo. Continue estudando e descobrindo como uma alimentação variada pode ajudar na nossa saúde!",
+                classe: styles.bgVermelho,
+            };
+        } else if (totalCertas <= 15) {
+            resultado = {
+                titulo: "Está quase lá!",
+                subtitulo: "Você já sabe bastante sobre vitaminas e nutrientes!",
+                mensagem:
+                    "Você demonstrou um bom conhecimento sobre os nutrientes estudados pela Liga da Saúde. Continue aprendendo para ficar ainda melhor!",
+                classe: styles.bgAmarelo,
+            };
+        } else {
+            resultado = {
+                titulo: "Excelente!",
+                subtitulo: "Você mandou muito bem!",
+                mensagem:
+                    "Você demonstrou excelente conhecimento sobre vitaminas, minerais, proteínas e fibras. Parabéns por cuidar da sua saúde e aprender tanto!",
+                classe: styles.bgVerde,
+            };
         }
 
         return (
@@ -161,29 +321,50 @@ export default function Quiz() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -30 }}
-                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            transition={{
+                                duration: 1.5,
+                                ease: "easeInOut",
+                            }}
                             className={styles.quizMotionDiv}
                         >
-                            <Card className={`${styles.finishCard} ${maisEscolhida === "A"
-                                ? styles.bgVerde
-                                : maisEscolhida === "B"
-                                    ? styles.bgAmarelo
-                                    : styles.bgVermelho
-                                }`}>
+                            <Card
+                                className={`${styles.finishCard} ${resultado.classe}`}
+                            >
                                 <Space
                                     direction="vertical"
                                     align="center"
-                                    size='large'>
-
+                                    size="large"
+                                >
                                     <Title level={1}>RESULTADO</Title>
-                                    <Title level={2}>{mensagens[maisEscolhida].titulo}</Title>
-                                    <Title level={3}>{mensagens[maisEscolhida].subtitulo}</Title>
 
-                                    <Text className={styles.finishText}>{mensagens[maisEscolhida].mensagem}</Text>
+                                    <Title level={2}>
+                                        {resultado.titulo}
+                                    </Title>
 
-                                    <Card className={styles.thxCard} size='small'>
+                                    <Title level={3}>
+                                        Você acertou {totalCertas} de{" "}
+                                        {perguntas.length} perguntas
+                                    </Title>
+
+                                    <Title level={4}>
+                                        {resultado.subtitulo}
+                                    </Title>
+
+                                    <Text className={styles.finishText}>
+                                        {resultado.mensagem}
+                                    </Text>
+
+                                    <Card
+                                        className={styles.thxCard}
+                                        size="small"
+                                    >
                                         <Space direction="vertical">
-                                            <Text className={styles.thxText}>Obrigado por participar!</Text>
+                                            <Text
+                                                className={styles.thxText}
+                                            >
+                                                Obrigado por participar!
+                                            </Text>
+
                                             <Button
                                                 className={styles.thxButton}
                                                 type="text"
@@ -193,7 +374,6 @@ export default function Quiz() {
                                             </Button>
                                         </Space>
                                     </Card>
-
                                 </Space>
                             </Card>
                         </motion.div>
@@ -203,13 +383,14 @@ export default function Quiz() {
         );
     }
 
-
     return (
         <Layout className={styles.quizLayout}>
             <Progress
-                percent={Math.round(((indice + 1) / perguntas.length) * 100)}
-                showInfo={false}>
-            </Progress>
+                percent={Math.round(
+                    ((indice + 1) / perguntas.length) * 100
+                )}
+                showInfo={false}
+            />
 
             <Content className={styles.quizContent}>
                 <AnimatePresence mode="wait">
@@ -218,7 +399,10 @@ export default function Quiz() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3, ease: 'easeIn' }}
+                        transition={{
+                            duration: 0.3,
+                            ease: "easeIn",
+                        }}
                         className={styles.quizMotionDiv}
                     >
                         <Card className={styles.quizCard}>
@@ -226,24 +410,35 @@ export default function Quiz() {
                                 className={styles.quizSpace}
                                 direction="vertical"
                                 align="center"
-                                size='large'
+                                size="large"
                             >
-
                                 <Title level={3}>
-                                    Pergunta {indice + 1} de {perguntas.length}
+                                    Pergunta {indice + 1} de{" "}
+                                    {perguntas.length}
                                 </Title>
 
-                                <Text className={styles.quizText}>{perguntaAtual.texto}</Text>
+                                <Text className={styles.quizText}>
+                                    {perguntaAtual.texto}
+                                </Text>
 
                                 <div className={styles.divButton}>
                                     {perguntaAtual.opcoes.map((opcao) => (
                                         <Button
                                             className={styles.optButton}
                                             key={opcao.valor}
-                                            type={resposta === opcao.valor ? "primary" : "default"}
+                                            type={
+                                                resposta === opcao.valor
+                                                    ? "primary"
+                                                    : "default"
+                                            }
                                             shape="round"
                                             block
-                                            onClick={() => { setResposta(opcao.valor); proximaPergunta(opcao.valor) }}
+                                            onClick={() => {
+                                                setResposta(opcao.valor);
+                                                proximaPergunta(
+                                                    opcao.valor
+                                                );
+                                            }}
                                         >
                                             {opcao.texto}
                                         </Button>
